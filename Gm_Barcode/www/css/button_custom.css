@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.ui-gbtn {
+	
+	font-size: 16px;
+	margin:0 auto !important;
+	
+	width:40%;
+	padding: .7em .1em;
+	display: block;
+	position: relative;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+	
+}
+/*.btnclass{
+	margin:0 auto;
+	}
+.ui-btn {
+	font-size: 16px;
+	margin:0 auto !important;
+	
+	width:70%;
+	padding: .7em .1em;
+	display: block;
+	position: relative;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.ui-btn-test {
+	font-size: 16px;
+	margin: .5em 0!important;
+	padding: .7em 1em;
+	display: block;
+	position: relative;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+ .ui-table-columntoggle-btn {
+    display: none !important;
+}   */

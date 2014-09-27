@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        <link href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.css" rel="stylesheet" type="text/css"> 
+ 
+ <link rel="stylesheet" href="themes/t3_thm.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link href="css/button_custom.css" rel="stylesheet" type="text/css">
+<script src="jquery.mobile-1.4.3/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(document).on("pagehide","#main",function(){
+//  alert("pagebeforeshow event fired - pagetwo is about to be shown");
+   window.location.reload();
+   
+});
+
+
+</script>
+<!--<style>
+div.midcnt{
+    width:300px;
+    height:300px;
+    border:1px solid #555;
+    position:relative;
+    top:10px;
+    left:10px;
+}
+</style>
+<script type="text/javascript">
+jQuery.fn.center = function(parent) {
+    if (parent) {
+        parent = this.parent();
+    } else {
+        parent = window;
+    }
+    this.css({
+        "position": "absolute",
+        "top": ((($(parent).height() - this.outerHeight()) / 2) + $(parent).scrollTop() + "px"),
+        "left": ((($(parent).width() - this.outerWidth()) / 2) + $(parent).scrollLeft() + "px")
+    });
+return this;
+}
+$("div.target:nth-child(1)").center(true);
+//$("div.target:nth-child(2)").center(false);
+</script>-->
+   
+        
+        <title>ARN offline scanner</title>
+    </head>
+    <body onload="CreateTable();">
+<div data-role="page" id="main" data-theme="a" >
+  <div data-role="header" data-position="fixed" >
+    <h1>ARN</h1>
+    <a href="#" data-role="button" class="ui-icon-power ui-btn ui-btn-icon-right ui-btn-right ui-btn-icon-notext ui-btn-corner-all ui-nodisc-icon"  onClick="exit1();" >Exit</a>
+
+  </div>
+  <div data-role="content" >
+  
+ <!-- <div class="ui-grid-b"><div class="ui-block-a">
+  </div>
+  <div class="ui-block-b">
+ --> 
+      <!-- <div id="cent" style="margin:0 auto ;
+margin-left:auto;
+margin-right:auto;
+align:center;
+text-align:center;">-->
+<!--<div id="cent" style=
+"position: absolute; 
+top: 50%; 
+margin-top: -1.2em;
+bottom: 50%;
+margin-bottom: -1.2em;
+">-->
+
+   <div data-role="controlgroup" >
+       <a href="#Scan" data-role="button" class="ui-gbtn"  >Scan</a>
+    <a href="#Sync" class="ui-gbtn" data-role="button" >Sync</a>
+    <a href="#History" class="ui-gbtn" data-role="button" >History</a></div>
+    <!-- <a href="#" class="ui-gbtn" data-role="button" onClick="exit1();" >Exit</a>-->
+   
+  <!-- </div>-->
+ 
+ <!-- </div> 
+  <a href="#" data-role="button" onClick="tst();" data-icon="gear">avfcha</a>
+ <a href="#" data-role="button" id="cnt" data-icon="gear">avfcha</a> 
+  <a href="#" data-role="button"  data-icon="gear" onClick="xmlpar();">avfcha</a>
+    <a href="#" data-role="button"  data-icon="gear" onClick="testclick();">avfcha</a></div>
+    <div class="ui-block-c">
+  </div></div>
+    -->
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h4>sunsmart&copy;</h4>
+  </div>
+</div>
+<div data-role="page" id="Scan" data-theme="a"
+>
+  <div data-role="header" data-position="fixed"
+  >
+  <a href="#" data-rel="back" data-role="button" class="ui-icon-back ui-btn ui-btn-icon-left ui-btn-left ui-btn-icon-notext ui-btn-corner-all ui-nodisc-icon">back</a>  <h1>Scan</h1>
+  <a href="#" data-role="button" class="ui-icon-power ui-btn ui-btn-icon-right ui-btn-right ui-btn-icon-notext ui-btn-corner-all ui-nodisc-icon"  onClick="exit1();" >Exit</a>
+  </div>
+  <div data-role="content">
+  <!-- Test Start -->
+  
+            
+        <!--    <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+                
+            </div>
+            -->
+            
+            <p>
+             <div data-role="controlgroup" >
+            <a href="#" class="topcoat-button ui-gbtn" data-role="button" id="scan" >SCAN</a>
+            </div>
+            </p>
+            <div data-role="fieldcontain">
+              <label for="Decode">Decode:</label>
+              <input type="text" name="Decode" id="Decode" placeholder="Decode"  required/>
+            </div>
+            <p> <div data-role="fieldcontain" class="ui-screen-hidden"> 
+                <label for="Type" class="ui-hidden-accessible">Type:</label>
+                <input type="text" name="Type" id="Type" placeholder="Type" class="ui-hidden-accessible"/> 
+              
+            </div> </p>
+            <p>
+       <div data-role="controlgroup" >
+      <a href="#" class="topcoat-button ui-gbtn" onClick="InsertData();" data-role="button" id="adddata" >Insert</a>
+         <!--   <button id="adddata" name="adddata" data-role="button" onclick="InsertData();" data-icon="plus">Insert</button> -->
+            </div>
+         <!--   <button id="adddata" name="adddata" onclick="checkConnection();" data-icon="plus">netcheck</button> --> 
+            </p>
+               <p id="info"></p>
+
+        </div>
+  
+  
+  <!-- Test End-->
+  
+  <div data-role="footer" data-position="fixed">
+    <h4>sunsmart&copy;</h4>
+  </div>
+</div>
+<div data-role="page" id="Sync" data-theme="a">
+  <div data-role="header" data-position="fixed">
+  <a href="#" data-rel="back" data-role="button" class="ui-icon-back ui-btn ui-btn-icon-left ui-btn-left ui-btn-icon-notext ui-btn-corner-all ui-nodisc-icon">back</a> <h1>Sync</h1>
+    <a href="#" data-role="button" class="ui-icon-power ui-btn ui-btn-icon-right ui-btn-right ui-btn-icon-notext ui-btn-corner-all ui-nodisc-icon"  onClick="exit1();" >Exit</a>
+
+  </div>
+  <div data-role="content">
+  <a href="#" class="topcoat-button ui-gbtn" onClick="syncdb();" data-role="button" >Sync</a>
+  <p>
+  <span id="123"></span>
+  </p>
+  <!--  <button data-icon="gear" onClick="syncdb();">Sync</button> -->
+    
+    
+    <!--adasd-->
+     <a href="#" class="topcoat-button ui-gbtn" data-role="button" onClick="logg();">Log</a>
+    <div data-role="content">
+   <table data-role="table" class="ui-responsive table-stroke " id="myTable">
+  <thead>
+    <tr>
+      <th data-priority="1">Pending</th>
+      <th data-priority="2">Recived</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+       <td><div id="pend"></div></td>
+       <td><div id="reci"></div></td>
+     
+    </tr>
+  </tbody>
+</table>
+   
+    </div>
+     <!-- adasd-->
+    
+  
+  
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h4>sunsmart&copy;</h4>
+  </div>
+</div>
+
+<div data-role="page" id="History" data-theme="a">
+  <div data-role="header" data-position="fixed">
+   <a href="#" data-rel="back" data-role="button" class="ui-icon-back ui-btn ui-btn-icon-left ui-btn-left ui-btn-icon-notext ui-btn-corner-all ui-nodisc-icon" >back</a> <h1>History</h1> <a href="#" data-role="button" class="ui-icon-power ui-btn ui-btn-icon-right ui-btn-right ui-btn-icon-notext ui-btn-corner-all ui-nodisc-icon"  onClick="exit1();" >Exit</a>
+
+  </div>
+  <div data-role="content">
+   <a href="#" class="topcoat-button ui-gbtn" onClick="GetData();" data-role="button" >Show History</a>
+  
+   <!-- <button data-icon="refresh" onClick="GetData();">Show History</button> -->
+    
+  				<p>SQL Result: <br/>
+					  <span id="sql-result"></span>
+					</p>
+                    
+                    <table data-role="table" class="ui-responsive ui-shadow ">
+                   <thead>
+        <tr>
+          <th>Decode Content</th>
+          <th>Barcode Type</th>
+          <th>TimeStamp</th>
+          
+        </tr>
+      </thead>
+  <tbody>
+  <tr>
+  
+  <td><div id="idvalue"></div></td><td><div id="namevalue"></div></td>
+  <td><div id="namevaluetime"></div></td>
+  </tr>
+  <tbody>
+  </table>    
+     
+					
+  
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h4>sunsmart&copy;</h4>
+  </div>
+</div>
+
+<!--<script type="text/javascript" src="cordova.js"></script> 
+<script type="text/javascript" src="cordova-2.6.0.js"></script>
+ <script type="text/javascript" charset="utf-8" src="SQLitePlugin.js"></script> 
+         <script type="text/javascript" src="childbrowser.js"></script> 
+ -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/storage.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/web_js_prser.js"></script>
+        <script type="text/javascript" src="js/validate.js"></script>
+        <script type="text/javascript" src="plugins/com.phonegap.plugins.barcodescanner/www/barcodescanner.js"></script>
+<script type="text/javascript" src="plugins/org.apache.cordova.network-information/www/Connection.js"></script>
+<script type="text/javascript" src="plugins/org.apache.cordova.network-information/www/network.js"></script>        
+ 
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
